@@ -35,7 +35,7 @@ As you know calculating Hejri Date from a timestamp includes of a lot of additio
 
 This is the fastest class ever known in php to do that !
 
-We compare the extension with [sallar/jDateTime](https://github.com/sallar/jDateTime) so that we do the same `date("Y m d l s f")` action with both classes.
+We compare the extension with [sallar/jDateTime](https://github.com/sallar/jDateTime) so that we do the same `date("Y m d l s f")` action with both classes 100,000 times.
 
 I ran the script on an ubuntu 14.04 machine with php5.5 installed and enabled opcache.
 
