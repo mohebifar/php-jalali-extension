@@ -37,6 +37,8 @@ This is the fastest class ever known in php to do that !
 
 We compare the extension with [sallar/jDateTime](https://github.com/sallar/jDateTime) so that we do the same `date("Y m d l s f")` action with both classes.
 
+I ran the script on an ubuntu 14.04 machine with php5.5 installed and enabled opcache.
+
 	$phpJDate = new jDateTime();
 	$extJDate = new \Jalali\Date();
 	
