@@ -13,6 +13,9 @@ Copy the `build/jalali.so` into the php extensions directory. Then add this line
 
 Done !
 
+## PHP Version ##
+If you are running php on a windows machine when developing or **you cannot install the extension for some reason**, You can include the **php version** which exists in `php` directory. **It uses the extension if it existed** otherwise It defines the same class in php context.
+
 How to use
 =========
 Create an object of `\Jalali\Date`.
