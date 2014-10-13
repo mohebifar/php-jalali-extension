@@ -6,7 +6,7 @@ ZEPHIR_INIT_CLASS(Jalali_Date);
 PHP_METHOD(Jalali_Date, __construct);
 PHP_METHOD(Jalali_Date, mktime);
 PHP_METHOD(Jalali_Date, getJalali);
-PHP_METHOD(Jalali_Date, format);
+PHP_METHOD(Jalali_Date, date);
 PHP_METHOD(Jalali_Date, dayOfWeek);
 PHP_METHOD(Jalali_Date, isLeap);
 PHP_METHOD(Jalali_Date, modulus);
@@ -14,7 +14,7 @@ PHP_METHOD(Jalali_Date, getMonthName);
 PHP_METHOD(Jalali_Date, getDayInWeekName);
 PHP_METHOD(Jalali_Date, getNumberWord);
 
-ZEND_BEGIN_ARG_INFO_EX(arginfo_jalali_date_mktime, 0, 0, 0)
+ZEND_BEGIN_ARG_INFO_EX(arginfo_jalali_date_mktime, 0, 0, 6)
 	ZEND_ARG_INFO(0, hour)
 	ZEND_ARG_INFO(0, minute)
 	ZEND_ARG_INFO(0, second)
@@ -27,7 +27,7 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_jalali_date_getjalali, 0, 0, 1)
 	ZEND_ARG_INFO(0, timestamp)
 ZEND_END_ARG_INFO()
 
-ZEND_BEGIN_ARG_INFO_EX(arginfo_jalali_date_format, 0, 0, 1)
+ZEND_BEGIN_ARG_INFO_EX(arginfo_jalali_date_date, 0, 0, 1)
 	ZEND_ARG_INFO(0, format)
 	ZEND_ARG_INFO(0, timestamp)
 ZEND_END_ARG_INFO()
@@ -64,7 +64,7 @@ ZEPHIR_INIT_FUNCS(jalali_date_method_entry) {
 	PHP_ME(Jalali_Date, __construct, NULL, ZEND_ACC_PUBLIC|ZEND_ACC_CTOR)
 	PHP_ME(Jalali_Date, mktime, arginfo_jalali_date_mktime, ZEND_ACC_PUBLIC)
 	PHP_ME(Jalali_Date, getJalali, arginfo_jalali_date_getjalali, ZEND_ACC_PUBLIC)
-	PHP_ME(Jalali_Date, format, arginfo_jalali_date_format, ZEND_ACC_PUBLIC)
+	PHP_ME(Jalali_Date, date, arginfo_jalali_date_date, ZEND_ACC_PUBLIC)
 	PHP_ME(Jalali_Date, dayOfWeek, arginfo_jalali_date_dayofweek, ZEND_ACC_PRIVATE)
 	PHP_ME(Jalali_Date, isLeap, arginfo_jalali_date_isleap, ZEND_ACC_PRIVATE)
 	PHP_ME(Jalali_Date, modulus, arginfo_jalali_date_modulus, ZEND_ACC_PRIVATE)

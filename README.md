@@ -1,4 +1,4 @@
 php-jalali-extension
 ====================
 
-A php extension for Jalali dates
+A php extension for Jalali dates.

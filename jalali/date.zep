@@ -73,7 +73,7 @@ class Date
         let this->words["PM"] = "ب.ظ";
     }
 
-    public function mktime(hour=null, minute=null, second=null, month=null, day=null, year=null)
+    public function mktime(hour, minute, second, month, day, year)
     {
         float timestamp;
 
@@ -162,7 +162,7 @@ class Date
      * @param type format
      * @return type
      */
-    public function format(format, timestamp = null)
+    public function date(format, timestamp = null)
     {
         if(timestamp == null) {
             let timestamp = time();

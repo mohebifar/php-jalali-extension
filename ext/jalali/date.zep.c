@@ -470,33 +470,13 @@ PHP_METHOD(Jalali_Date, mktime) {
 	zephir_nts_static zephir_fcall_cache_entry *_7 = NULL;
 	int _0, ZEPHIR_LAST_CALL_STATUS, _8;
 	double timestamp;
-	zval *hour = NULL, *minute = NULL, *second = NULL, *month = NULL, *day = NULL, *year = NULL, *_1, *_2, _3, _4 = zval_used_for_init, _5, *_6 = NULL;
+	zval *hour, *minute, *second, *month, *day, *year, *_1, *_2, _3, _4 = zval_used_for_init, _5, *_6 = NULL;
 
 	ZEPHIR_MM_GROW();
-	zephir_fetch_params(1, 0, 6, &hour, &minute, &second, &month, &day, &year);
+	zephir_fetch_params(1, 6, 0, &hour, &minute, &second, &month, &day, &year);
 
-	if (!hour) {
-		hour = ZEPHIR_GLOBAL(global_null);
-	}
-	if (!minute) {
-		minute = ZEPHIR_GLOBAL(global_null);
-	}
-	if (!second) {
-		second = ZEPHIR_GLOBAL(global_null);
-	}
-	if (!month) {
-		month = ZEPHIR_GLOBAL(global_null);
-	}
-	if (!day) {
-		ZEPHIR_CPY_WRT(day, ZEPHIR_GLOBAL(global_null));
-	} else {
-		ZEPHIR_SEPARATE_PARAM(day);
-	}
-	if (!year) {
-		ZEPHIR_CPY_WRT(year, ZEPHIR_GLOBAL(global_null));
-	} else {
-		ZEPHIR_SEPARATE_PARAM(year);
-	}
+	ZEPHIR_SEPARATE_PARAM(day);
+	ZEPHIR_SEPARATE_PARAM(year);
 
 
 	timestamp = (double) (((zephir_get_numberval(second) + (zephir_get_numberval(minute) * 60)) + ((zephir_get_numberval(hour) * 60) * 60)));
@@ -661,7 +641,7 @@ PHP_METHOD(Jalali_Date, getJalali) {
  * @param type format
  * @return type
  */
-PHP_METHOD(Jalali_Date, format) {
+PHP_METHOD(Jalali_Date, date) {
 
 	zephir_nts_static zephir_fcall_cache_entry *_2 = NULL, *_9 = NULL, *_11 = NULL, *_14 = NULL, *_20 = NULL, *_29 = NULL, *_34 = NULL, *_50 = NULL;
 	int ZEPHIR_LAST_CALL_STATUS;
