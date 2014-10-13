@@ -3,7 +3,7 @@ PHP Jalali Extension
 
 Jalali extension is a php extension written in C which allows you to format a timestamp by *Hejri Date Format* or get the timestamp by giving *Hejri Dates*.
 
-This is simply **as fast as ** `date()` and `mktime()` functions.
+This is simply **as fast as** `date()` and `mktime()` functions.
 
 Installation
 ==========
@@ -35,7 +35,7 @@ As you know calculating Hejri Date from a timestamp includes of a lot of additio
 
 This is the fastest class ever known in php to do that !
 
-We compare the extension with [sallar/jDateTime](https://github.com/sallar/jDateTime) so that we do the same `date("Y m d l s f")` action with two classes.
+We compare the extension with [sallar/jDateTime](https://github.com/sallar/jDateTime) so that we do the same `date("Y m d l s f")` action with both classes.
 
 	$phpJDate = new jDateTime();
 	$extJDate = new \Jalali\Date();
