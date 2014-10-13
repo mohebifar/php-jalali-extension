@@ -11,7 +11,7 @@ class Date
      * @access protected
      * @var double
      */
-    protected static $khayamYear = 365.24218956;
+    const KHAYAM_YEAR = 365.24218956;
 
     /**
      * Count of days at the end of each Persian month
@@ -24,28 +24,16 @@ class Date
         186, 216, 246, 276, 306, 336
     ];
 
-    public function makeDateTime(hour, minute, second, month, day, year)
+    public function mktime(year, month, day, hour=0, minute=0, second=0)
     {
-        int timestamp;
-        int dayOfYear;
-        var datetime;
+        float timestamp;
 
         let timestamp = second + minute * 60 + hour * 60 * 60;
-
-        let dayOfYear = (day + this->mountCounter[$month - 1]);
-
-        if (year < 100) {
-            let year = year + 1300;
-        }
-
         let year = year - 1348;
-
-        let day = dayOfYear + round(( self::khayamYear * year), 0) - 287;
+        let day = this->mountCounter[month - 1] + day + round(( self::KHAYAM_YEAR * year), 0) - 287;
         let timestamp = timestamp + day * 86400;
 
-        let datetime = new \DateTime();
-        datetime->setTimestamp(timestamp);
-        return datetime;
+        return timestamp;
     }
 
 }
