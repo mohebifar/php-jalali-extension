@@ -19,17 +19,22 @@ How to use
 =========
 Create an object of `\Jalali\Date`.
 
-
-	$jDate = new \Jalali\Date();
+```php
+$jDate = new \Jalali\Date();
+```
 
 You can format the date by calling `$jDate::date`. The function covers all of the native `date()` function literals.
 
-	$jDate->date("l jS F Y");
-	// Output: دوشنبه بیست و یکم مهر 1393
+```php
+$jDate->date("l jS F Y");
+// Output: دوشنبه بیست و یکم مهر 1393
+```
 
 And Also You can get the timestamp of a date time.
 
-	$jDate->mktime(15, 45, 0, 7, 21, 1393);
+```php
+$jDate->mktime(15, 45, 0, 7, 21, 1393);
+```
 
 Benchmark
 =========
@@ -41,25 +46,27 @@ We compare the extension with [sallar/jDateTime](https://github.com/sallar/jDate
 
 I ran the script on an ubuntu 14.04 machine with php5.5 installed and enabled opcache.
 
-	$phpJDate = new jDateTime();
-	$extJDate = new \Jalali\Date();
-	
-	$phpTime = 0;
-	$extTime = 0;
-	
-	$time = time();
-	for($i = 0; $i < 100000; $i++) {
-	    $start = microtime(true);
-	    $phpJDate->date("Y m d l s f");
-	    $phpTime += microtime(true) - $start;
-	
-	    $start = microtime(true);
-	    $extJDate->date("Y m d l s f");
-	    $extTime += microtime(true) - $start;
-	}
-	
-	var_dump($phpTime, $extTime);
-	
+```php
+$phpJDate = new jDateTime();
+$extJDate = new \Jalali\Date();
+
+$phpTime = 0;
+$extTime = 0;
+
+$time = time();
+for($i = 0; $i < 100000; $i++) {
+    $start = microtime(true);
+    $phpJDate->date("Y m d l s f");
+    $phpTime += microtime(true) - $start;
+
+    $start = microtime(true);
+    $extJDate->date("Y m d l s f");
+    $extTime += microtime(true) - $start;
+}
+
+var_dump($phpTime, $extTime);
+```
+
 And the result is :
 
 	18.459370851517 seconds for sallar/jDateTime
