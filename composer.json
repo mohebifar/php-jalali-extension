@@ -1,0 +1,12 @@
+{
+    "name": "mohebifar/phpjalali",
+    "description": "A php extension written in C for Jalali date calendar with php class fallback",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamad Mohebifar",
+            "email": "mohamad@mohebifar.com"
+        }
+    ],
+    "require": {}
+}
