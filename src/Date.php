@@ -55,6 +55,11 @@ if (!class_exists('Jalali\\Date')) {
          */
         protected static $khayamYearCorrection = 0.00000006152;
 
+        /**
+         * The words which is used to format
+         *
+         * @var array
+         */
         private static $words = array(
             "month" => array(
                 "long" => array("فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"),
@@ -74,11 +79,20 @@ if (!class_exists('Jalali\\Date')) {
             "PM" => "ب.ظ"
         );
 
+        /**
+         * Constructor of Jalali date
+         */
         public function __construct()
         {
             $this->representation = new TimeRepresentation();
         }
 
+        /**
+         * This function creates the time representation according to given Timestamp
+         *
+         * @param $timestamp
+         * @return $this
+         */
         public function setTimestamp($timestamp)
         {
             if ($timestamp instanceof \DateTime) {
@@ -117,7 +131,6 @@ if (!class_exists('Jalali\\Date')) {
         }
 
         /**
-         * <pre>
          * <b> Day </b>
          * d: Day of month 01 to 31
          * D: A textual representation of a day ش to ج
@@ -147,7 +160,7 @@ if (!class_exists('Jalali\\Date')) {
          * H: 24-hour format of an hour with leading zeros 01 to 23
          * i: Minutes with leading zeros
          * s: Seconds with leading zeros
-         * </pre>
+         *
          * @param string $format
          * @param int $timestamp
          * @return string
